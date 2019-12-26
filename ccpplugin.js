@@ -47,7 +47,7 @@
 		if($opt.setClass!=null){
 			$.ajax({
             type: "GET",
-            url: "http://127.0.0.1:8000/api/v1/country/"+$selected,
+            url: "https://ccpapi.herokuapp.com/api/v1/country/"+$selected,
             datatype: "json",
             crossDomain : true,
             success:function(data){
@@ -81,7 +81,7 @@
 function setOptions($el){
 	$.ajax({
             type: "GET",
-            url: "http://127.0.0.1:8000/api/v1/country",
+            url: "https://ccpapi.herokuapp.com/api/v1/country",
             datatype: "json",
             crossDomain : true,
             success:function(data){
