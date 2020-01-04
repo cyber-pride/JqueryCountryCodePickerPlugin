@@ -18,7 +18,7 @@
  * - setClass (String) -> Class of input field
  * - setBgColor (String) -> background of setClass
  * - setFontColor(String) -> font color of setClass
- * - setPrefix (Boolean) -> show prefix ture/false
+ * - setPrefix (Boolean) -> show phonecode prefix
  * 
  */
 (function($){
