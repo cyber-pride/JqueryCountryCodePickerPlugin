@@ -16,30 +16,30 @@
  * 
  * properties
  * - setClass (String) -> Class of input field
- * - bgColor (String) -> background of setClass
- * - fontColor(String) -> font color of setClass
- * - prefix (Boolean) -> show prefix ture/false
+ * - setBgColor (String) -> background of setClass
+ * - setFontColor(String) -> font color of setClass
+ * - setPrefix (Boolean) -> show prefix ture/false
  * 
  */
 (function($){
 	$.fn.phonecode = function(options){
             $defaults={
 		setClass: null,
-		bgColor: 'white',
-                fontColor: 'black',
-                prefix: true
+		setBgColor: 'white',
+        setFontColor: 'black',
+        setPrefix: true
 		}
 		$opt=$.extend(true,$defaults, options);
 		$('.'+$opt.setClass).prop('disabled',true);
 		$ele =$(this);
                 setOptions($ele);
                 //check prefix should be boolean
-                if($opt.prefix===true | $opt.prefix===false){
-                    $opt.prefix =$opt.prefix
+                if($opt.setPrefix===true | $opt.setPrefix===false){
+                    $opt.setPrefix =$opt.setPrefix
                 }
                 else{
-                    $.error("value of 'prefix' cannot be '"+$opt.prefix+"'");
-                    $opt.prefix =$defaults.prefix;
+                    $.error("value of 'setPrefix' cannot be '"+$opt.setPrefix+"'");
+                    $opt.setPrefix =$defaults.setPrefix;
                     
                 }
 	$ele.on('change',function(){
@@ -53,7 +53,7 @@
             success:function(data){
             json=$.parseJSON(data);
             $.each(json, function(index, val) {
-                if($opt.prefix===true){
+                if($opt.setPrefix===true){
                 $('.'+$opt.setClass).val(val.phonecode);
                 }
                 else{
@@ -64,9 +64,9 @@
                                         'background-size':'30px 20px',
 			 							'background-repeat':'no-repeat',
 			 							'padding-left':'50px',
-			 							'background-color':$opt.bgColor,
+			 							'background-color':$opt.setBgColor,
 			 							'background-position':'5px 5px',
-                                        'color':$opt.fontColor
+                                        'color':$opt.setFontColor
 			 							});
 		$('.'+$opt.setClass).prop('disabled',false);
             });
